@@ -4,7 +4,6 @@ import User from "../../models/user";
 import { NonRetriableError } from "inngest";
 import { sendMail } from "../../utils/mailer";
 import analyzeTicket from "../../utils/ai";
-import user from "../../models/user";
 
 export const onTicketCreated = inngest.createFunction(
   { id: "on-ticket-created", retries: 2 },
