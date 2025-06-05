@@ -7,6 +7,9 @@ import ticketRoutes from "./routes/ticket";
 import { inngest } from "./inngest/client";
 import { onUserSignup } from "./inngest/functions/on-signup";
 import { onTicketCreated } from "./inngest/functions/on-ticket-create";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const app = express();
