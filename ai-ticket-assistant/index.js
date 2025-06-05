@@ -2,11 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { serve } from "inngest/express";
-import userRoutes from "./routes/user";
-import ticketRoutes from "./routes/ticket";
-import { inngest } from "./inngest/client";
-import { onUserSignup } from "./inngest/functions/on-signup";
-import { onTicketCreated } from "./inngest/functions/on-ticket-create";
+import userRoutes from "./routes/user.js";
+import ticketRoutes from "./routes/ticket.js";
+import { inngest } from "./inngest/client.js";
+import { onUserSignup } from "./inngest/functions/on-signup.js";
+import { onTicketCreated } from "./inngest/functions/on-ticket-create.js";
 import dotenv from "dotenv";
 
 dotenv.config();
