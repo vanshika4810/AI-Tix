@@ -107,7 +107,7 @@ export default function Tickets() {
           value={form.description}
           onChange={handleChange}
           placeholder="Ticket Description"
-          className="textarea textarea-bordered w-full rounded-md"
+          className="input input-bordered w-full rounded-md min-h-[100px] py-2"
           required
         ></textarea>
         <button

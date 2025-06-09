@@ -43,27 +43,29 @@ function Signup() {
     <div className="min-h-screen flex items-center justify-center bg-base-200">
       <div className="card w-full max-w-sm shadow-xl bg-base-100">
         <form onSubmit={handleSignup} className="card-body">
-          <h2 className="card-title justify-center">Sign Up</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">Sign Up</h2>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="input input-bordered"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
+          <div className="space-y-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="input input-bordered w-full bg-white dark:bg-gray-800"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            className="input input-bordered"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="input input-bordered w-full bg-white dark:bg-gray-800"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <div className="form-control mt-4">
             <button
@@ -71,7 +73,7 @@ function Signup() {
               className="btn btn-primary w-full"
               disabled={loading}
             >
-              {loading ? "Signing up..." : "Sign Up"}
+              {loading ? "Signing up..." : "Submit"}
             </button>
           </div>
         </form>
