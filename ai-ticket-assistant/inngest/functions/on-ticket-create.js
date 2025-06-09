@@ -46,7 +46,7 @@ export const onTicketCreated = inngest.createFunction(
 
       const moderator = await step.run("assign-moderator", async () => {
         let user = await User.findOne({
-          role: moderator,
+          role: "moderator",
           skills: {
             $elemMatch: {
               $regex: relatedSkills.join("|"),

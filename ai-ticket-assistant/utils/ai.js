@@ -49,7 +49,7 @@ const analyzeTicket = async (ticket) => {
     - Title: ${ticket.title}
     - Description: ${ticket.description}`);
 
-  const raw = response.output[0].context;
+  const raw = response.output[0].content;
   try {
     const match = raw.match(/```json\s*([\s\S]*?)\s*```/i); // checks the format of the AI generated response
     const jsonString = match ? match[1] : raw.trim();
