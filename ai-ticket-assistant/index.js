@@ -16,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://ai-tix.app"], 
+    origin: ["http://localhost:5173", "https://ai-tix.vercel.app"], 
     credentials: true, 
   })
 );
