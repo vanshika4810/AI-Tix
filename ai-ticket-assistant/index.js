@@ -14,7 +14,15 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://your-vercel-app-name.vercel.app",
+    ], // Add your Vercel frontend domain
+    credentials: true, // If you're sending cookies/auth headers
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", userRoutes);
@@ -32,6 +40,8 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected");
-    app.listen(PORT, () => console.log("Server at http://localhost:3000"));
+    app.listen(PORT, () => console.log(`Server at ${PORT}`));
   })
   .catch((err) => console.error("MongoDB error:", err));
+
+export default app;

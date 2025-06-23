@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "ai-ticket-assistant/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["ai-ticket-assistant/**"]
+      }
+    },
+    {
+      "src": "ai-ticket-assisstant-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "ai-ticket-assistant/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "ai-ticket-assisstant-frontend/$1"
+    }
+  ]
+}
