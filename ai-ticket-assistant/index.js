@@ -16,11 +16,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://your-vercel-app-name.vercel.app",
-    ], // Add your Vercel frontend domain
-    credentials: true, // If you're sending cookies/auth headers
+    origin: ["http://localhost:5173", "https://ai-tix.app"], 
+    credentials: true, 
   })
 );
 app.use(express.json());
